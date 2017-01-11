@@ -2,7 +2,12 @@ var pokemonApp = angular.module('PokemonApp', ['ngRoute', 'ngWebSocket']);
 
 angular.
 module('PokemonApp').
-
+config(['$httpProvider', function($httpProvider){
+    $httpProvider.defaults.headers.common = {
+        "application-id": "238CFA67-DD9E-D55A-FF50-723F8B990100",
+        "secret-key": "1D960D5D-3B9A-0C37-FF3D-E1BE0248B300"
+    };
+}]).
 config(['$routeProvider',
     function config($routeProvider) {
 
