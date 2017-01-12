@@ -10,12 +10,15 @@ pokemonApp.controller('PokemonListCtrl', function($scope, PokemonsService, Berri
     //     $scope.berries = response.data.results;
     // });
 
+    $scope.pokemonsLoaded = false;
+
     PokemonsService.getPokemons().then(function(response) {
         $scope.pokemons = response.data.results;
 
         return BerriesService.getBerries()
     }).then(function(response) {
         $scope.berries = response.data.results;
+        $scope.pokemonsLoaded = true;
     });
 
 

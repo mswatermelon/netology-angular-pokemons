@@ -28,6 +28,10 @@ config(['$routeProvider',
             templateUrl: 'src/PokemonRealtime/PokemonRealtime.html',
             controller: 'PokemonRealtimeCtrl'
         }).
+        when('/update/:pokemonId', {
+            templateUrl: 'src/UpdatePokemon/PokemonUpdate.html',
+            controller: 'PokemonUpdateCtrl'
+        }).
         otherwise({
             redirectTo: '/'
         });

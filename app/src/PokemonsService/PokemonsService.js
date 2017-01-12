@@ -5,11 +5,11 @@ angular
             return {
 
                 getPokemons: function() {
-                    return $http.get('http://pokeapi.co/api/v2/pokemon/?limit=10');
+                    return $http.get('https://api.backendless.com/v1/data/pokemon/?limit=10');
                 },
 
                 getPokemon: function(pokemonId) {
-                    return $http.get('http://pokeapi.co/api/v2/pokemon/' + pokemonId);
+                    return $http.get('https://api.backendless.com/v1/data/pokemon' + pokemonId);
                 },
 
                 createPokemon: function(pokemonData) {
@@ -17,8 +17,8 @@ angular
                         method: 'POST',
                         url: 'https://api.backendless.com/v1/data/pokemon',
                         headers: {
-                            "application-id": "4B730C92-F81E-236B-FFF0-6651FE882800",
-                            "secret-key": "CB6DE86C-6069-86C4-FF1C-9049D5AC9400"
+                            "application-id": "238CFA67-DD9E-D55A-FF50-723F8B990100",
+                            "secret-key": "1D960D5D-3B9A-0C37-FF3D-E1BE0248B300"
 
                         },
                         data: pokemonData
@@ -30,10 +30,23 @@ angular
                         method: 'DELETE',
                         url: 'https://api.backendless.com/v1/data/pokemon/' + pokemonId,
                         headers: {
-                            "application-id": "4B730C92-F81E-236B-FFF0-6651FE882800",
-                            "secret-key": "CB6DE86C-6069-86C4-FF1C-9049D5AC9400"
+                            "application-id": "238CFA67-DD9E-D55A-FF50-723F8B990100",
+                            "secret-key": "1D960D5D-3B9A-0C37-FF3D-E1BE0248B300"
 
                         }
+                    });
+                },
+
+                updatePokemon: function(pokemonId) {
+                    return $http({
+                        method: 'PUT',
+                        url: 'https://api.backendless.com/v1/data/pokemon/' + pokemonId,
+                        headers: {
+                            "application-id": "238CFA67-DD9E-D55A-FF50-723F8B990100",
+                            "secret-key": "1D960D5D-3B9A-0C37-FF3D-E1BE0248B300"
+
+                        },
+                        data: pokemonData
                     });
                 }
 

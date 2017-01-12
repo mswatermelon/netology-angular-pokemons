@@ -1,4 +1,8 @@
-<div class="list-group">
+<div ng-if="!berriesLoaded">
+    <span class="glyphicon glyphicon-refresh"></span>
+    Loading...
+</div>
+<div class="list-group" ng-if="berriesLoaded">
     <div class="list-group-item" ng-repeat="singleBerry in berries">
 
         <h4>
